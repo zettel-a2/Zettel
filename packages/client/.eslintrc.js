@@ -4,8 +4,9 @@ module.exports = {
 		'node': false,
 	},
 	parser: 'vue-eslint-parser',
+	ignorePatterns: ['.eslintrc.*'],
 	parserOptions: {
-		'parser': '@typescript-eslint/parser',
+		parser: '@typescript-eslint/parser',
 		tsconfigRootDir: __dirname,
 		project: ['./tsconfig.json'],
 		extraFileExtensions: ['.vue'],
@@ -15,12 +16,6 @@ module.exports = {
 		'plugin:@typescript-eslint/recommended',
 	],
 	rules: {
-		'@typescript-eslint/no-empty-interface': [
-			'error',
-			{
-				'allowSingleExtends': true,
-			},
-		],
 		// window の禁止理由: グローバルスコープと衝突し、予期せぬ結果を招くため
 		// data の禁止理由: 抽象的すぎるため
 		// e の禁止理由: error や event など、複数のキーワードの頭文字であり分かりにくいため
