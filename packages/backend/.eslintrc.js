@@ -1,32 +1,74 @@
 module.exports = {
-	parserOptions: {
-		tsconfigRootDir: __dirname,
-		project: ['./tsconfig.json'],
+	'env': {
+		'es2021': true,
+		'node': true,
 	},
 	extends: [
-		'../shared/.eslintrc.js',
+		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended',
+	],
+	ignorePatterns: ['.eslintrc.*'],
+	parser: '@typescript-eslint/parser',
+	parserOptions: {
+		tsconfigRootDir: __dirname,
+		project: `tsconfig.json`,
+	},
+	plugins: [
+		'@typescript-eslint',
 	],
 	rules: {
-		'import/order': ['warn', {
-			'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
-			'pathGroups': [
-				{
-					'pattern': '@/**',
-					'group': 'external',
-					'position': 'after'
-				}
-			],
-		}],
-		'no-restricted-globals': [
+		'no-var': 'error',
+		'no-duplicate-imports': 'error',
+		'indent': [
+			'error',
+			'tab',
+		],
+		'linebreak-style': [
+			'error',
+			'unix',
+		],
+		'quotes': [
+			'error',
+			'single',
+		],
+		'semi': [
+			'error',
+			'always',
+		],
+		'@typescript-eslint/naming-convention': [
 			'error',
 			{
-				'name': '__dirname',
-				'message': 'Not in ESModule. Use `import.meta.url` instead.'
+				'selector': 'class',
+				'format': ['StrictPascalCase'],
+			},{
+				'selector': 'variableLike',
+				'format': ['strictCamelCase'],
+			},{
+				'selector': 'typeLike',
+				'format': ['strictCamelCase'],
+				'custom': {
+					'regex': 'I',
+					'match': false,
+				},
 			},
+		],
+		'@typescript-eslint/no-unsafe-return': 'error',
+		'@typescript-eslint/explicit-function-return-type': [
+			'warn',
 			{
-				'name': '__filename',
-				'message': 'Not in ESModule. Use `import.meta.url` instead.'
-			}
-	]
+				'allowedNames': ['ignoredFunctionName', 'ignoredMethodName'],
+			},
+		],
+		'@typescript-eslint/no-confusing-non-null-assertion': 'warn',
+		'@typescript-eslint/non-nullable-type-assertion-style': 'warn',
+		'require-jsdoc': ['warn', {
+			'require': {
+				'FunctionDeclaration': true,
+				'MethodDefinition': true,
+				'ClassDeclaration': true,
+				'ArrowFunctionExpression': true,
+				'FunctionExpression': true,
+			},
+		}],
 	},
 };

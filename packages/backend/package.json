@@ -8,13 +8,15 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "check-types": "tsc --noEmit",
-    "lint": "run-p -l -c --aggregate-output lint:*",
-    "lint:eslint": "eslint src/**/*.ts",
-    "lint:prettier": "prettier --check .",
-    "fix": "run-s -l -c fix:eslint fix:prettier",
-    "fix:eslint": "eslint --fix src/**/*.ts",
-    "fix:prettier": "prettier --write ."
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint --fix src/**/*.ts"
   },
+  "eslintIgnore": [
+    ".eslintrc.js",
+    "node_modules",
+    "built",
+    "scripts"
+  ],
   "dependencies": {
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.6",
@@ -24,7 +26,12 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
+    "@types/connect-flash": "^0.0.37",
+    "@types/cookie-parser": "^1.4.3",
+    "@types/express": "^4.17.13",
+    "@types/morgan": "^1.9.3",
     "@types/node": "^18.0.0",
+    "@types/serve-favicon": "^2.5.3",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "eslint": ">=5.16.0",

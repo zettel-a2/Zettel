@@ -11,8 +11,8 @@ module.exports = {
 		extraFileExtensions: ['.vue'],
 	},
 	extends: [
-		'../shared/.eslintrc.js',
 		'plugin:vue/vue3-recommended',
+		'plugin:@typescript-eslint/recommended',
 	],
 	rules: {
 		'@typescript-eslint/no-empty-interface': [
