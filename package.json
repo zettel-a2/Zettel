@@ -6,7 +6,8 @@
 		"lint": "node ./scripts/lint.mjs",
 		"clean": "node ./scripts/clean.js",
 		"clean-all": "node ./scripts/clean-all.js",
-		"cleanall": "npm run clean-all"
+		"cleanall": "npm run clean-all",
+		"install": "node ./scripts/install.mjs"
 	},
 	"dependencies": {
 		"execa": "^6.1.0"
