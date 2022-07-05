@@ -15,5 +15,8 @@
     "eslint-plugin-vue": "^9.1.1",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "vite": "^2.9.13"
   }
 }

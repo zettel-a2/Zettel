@@ -13,7 +13,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import app from '../app';
-const debug = require('debug')('ulabeler:server');
+const debug = require('debug')('zettel:server');
 import http from 'http';
 
 /**
