@@ -13,7 +13,16 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"dbaeumer.vscode-eslint"
+				"dbaeumer.vscode-eslint",
+				"mhutchie.git-graph",
+				"GitHub.copilot",
+				"ms-azuretools.vscode-docker",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"esbenp.prettier-vscode",
+				"vector-of-bool.gitflow",
+				"oderwat.indent-rainbow",
+				"EditorConfig.EditorConfig",
+				"Prisma.prisma"
 			]
 		}
 	},
