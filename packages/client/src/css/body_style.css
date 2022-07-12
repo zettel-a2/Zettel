@@ -317,6 +317,24 @@ input[type=radio]:checked + .color_genre::after {
 }
 
 
+
 input[type=button]{
-  margin: 0 10%;
+  margin: 20px 10%;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1em 2em;
+  width: 100px;
+  color: #6a5050;
+  font-size: 10px;
+  border: solid 1px #6a5050;
+  font-weight: 700;
+  background-color: #fefff1;
+  transition: 0.8s;
+}
+input[type=button]:hover {
+  text-decoration: none;
+  color: #fefff1;
+  background-color: #6a5050;
+  border: solid 1px #6a5050;
 }
