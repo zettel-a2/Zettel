@@ -11,31 +11,36 @@ datasource db {
 }
 
 model userLogin {
-  userID        String @id
-  password      String
-  addressName   String?
-  nickName      String?
-  createdAt     DateTime @default(now())
-  deletedAt     DateTime?
+  userID      String    @id
+  password    String
+  addressName String?
+  nickName    String?
+  createdAt   DateTime  @default(now())
+  deletedAt   DateTime?
+  receipt     receipt[]
 }
 
 model receipt {
-  settlementId  String @id
-  user          userLogin @relation(fields: [userId], references: [userID])
-  userID        String
-  subMoney      Int
-  genre         String?
-  storeName     String?
-  memo          String?
-  useDetails    String?
+  settlementId   String           @id
+  user           userLogin        @relation(fields: [userID], references: [userID])
+  userID         String
+  subMoney       Int
+  genre          String?
+  storeName      String?
+  memo           String?
+  useDetails     String?
+  receiptDetails receiptDetails[]
 }
 
 model receiptDetails {
-  productsName  String @id
-  settlementId  String @id @relation()
-  unitprice     Int
-  quantity      String
-  sumMoney      String?
-  discount      String?
-  tax           String?
+  productsName String
+  unitprice    Int
+  quantity     String
+  sumMoney     Int
+  discount     Int? // 値引き(実数値)
+  tax          Int    @default(10) // 消費税(実数値)
+  settlementId String
+
+  receipt receipt @relation(fields: [settlementId], references: [settlementId])
+  @@id([productsName, settlementId])
 }
