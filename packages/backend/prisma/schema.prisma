@@ -10,11 +10,32 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id          String @id @default(cuid())
-  name        String
-  email       String
-  password    String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @default(now())
+model userLogin {
+  userID        String @id
+  password      String
+  addressName   String?
+  nickName      String?
+  createdAt     DateTime @default(now())
+  deletedAt     DateTime?
+}
+
+model receipt {
+  settlementId  String @id
+  user          userLogin @relation(fields: [userId], references: [userID])
+  userID        String
+  subMoney      Int
+  genre         String?
+  storeName     String?
+  memo          String?
+  useDetails    String?
+}
+
+model receiptDetails {
+  productsName  String @id
+  settlementId  String @id @relation()
+  unitprice     Int
+  quantity      String
+  sumMoney      String?
+  discount      String?
+  tax           String?
 }
