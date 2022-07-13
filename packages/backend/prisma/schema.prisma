@@ -11,7 +11,7 @@ datasource db {
 }
 
 model userLogin {
-  userID      String    @id
+  userID      String    @id // ユーザーID
   password    String
   addressName String?
   nickName    String?
