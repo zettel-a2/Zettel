@@ -7,7 +7,8 @@
 		"clean": "node ./scripts/clean.js",
 		"clean-all": "node ./scripts/clean-all.js",
 		"cleanall": "npm run clean-all",
-		"install": "node ./scripts/install.mjs"
+		"install": "node ./scripts/install.mjs",
+		"start:dev": "cd ./packages/backend &&  nest start --watch"
 	},
 	"dependencies": {
 		"execa": "^6.1.0"
