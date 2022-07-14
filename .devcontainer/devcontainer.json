@@ -22,7 +22,8 @@
 				"vector-of-bool.gitflow",
 				"oderwat.indent-rainbow",
 				"EditorConfig.EditorConfig",
-				"Prisma.prisma"
+				"Prisma.prisma",
+				"Vue.volar"
 			]
 		}
 	},
