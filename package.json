@@ -10,7 +10,7 @@
 		"cleanall": "npm run clean-all",
 		"install": "node ./scripts/install.mjs",
 		"start:dev": "cd ./packages/backend &&  nest start --watch",
-		"start": "cd ./packages/backend &&  nest start:dev",
+		"start": "cd ./packages/backend &&  yarn start:dev",
 		"migrateandstart": "yarn migrate && yarn start",
 		"migrateandstart:dev": "yarn migrate:dev && yarn start:dev",
 		"client:preview": "cd ./packages/client && yarn vite build && yarn vite preview",
