@@ -15,7 +15,7 @@ jobs:
       - name: setup
         run: |
           ### タグ名を取得
-          CURRENT_VERSION=$(echo $GITHUB_REF#refs/heads/sed -e 's/refs\/heads\///' | sed -e 's/#refs\/heads\///')
+          CURRENT_VERSION=$(echo $GITHUB_REF#refs/heads/ | sed -e 's/refs\/heads\///' | sed -e 's/#refs\/heads\///')
           ### リポジトリ名を少々カスタマイズ（dockerhubやecrにpushするための）
           REPO_NAME=$(echo ${{ github.repository }} | sed -e 's/^.\+\/\(.\+\)$/\1/g')
           ### 次のstepに値を渡す
