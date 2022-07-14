@@ -10,29 +10,29 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model userLogin {
-  userID      String    @id // ユーザーID（PK）
+model User {
+  id          String    @id // ユーザーID（PK）
   password    String // パスワード
   addressName String? // 宛名（領収書などの）
   nickName    String? // ニックネーム
   createdAt   DateTime  @default(now()) // ユーザーアカウント作成時
   deletedAt   DateTime? // 論理削除用
-  receipt     receipt[] // userLogin と receipt の関係性（１対多）
+  receipt     Receipt[] // userLogin と receipt の関係性（１対多）
 }
 
-model receipt {
-  settlementId   String           @id // 決算ID（PK）
-  user           userLogin        @relation(fields: [userID], references: [userID]) // 親テーブルと参照先カラム指定（FK設定）
-  userID         String // ユーザーID
+model Receipt {
+  id             String           @id // 決算ID（PK）
+  user           User             @relation(fields: [userId], references: [id]) // 親テーブルと参照先カラム指定（FK設定）
+  userId         String // ユーザーID
   sumMoney       Int // 合計金額
   genre          String? // ジャンル
   storeName      String? // 店舗名
   memo           String? // メモ
   useDetails     String? // 使用用途
-  receiptDetails receiptDetails[] // receipt と receiptDetails の関係性（１対多）
+  receiptDetails ReceiptDetails[] // receipt と receiptDetails の関係性（１対多）
 }
 
-model receiptDetails {
+model ReceiptDetails {
   productsName String // 商品名（PK）
   settlementId String // 決算ID（PK）
   unitprice    Int // 単価
@@ -41,6 +41,6 @@ model receiptDetails {
   discount     Int? // 値引き(実数値)
   tax          Int    @default(10) // 消費税(実数値)
 
-  receipt receipt @relation(fields: [settlementId], references: [settlementId]) // 親テーブルと参照先カラム指定（FK設定）
+  receipt Receipt @relation(fields: [settlementId], references: [id]) // 親テーブルと参照先カラム指定（FK設定）
   @@id([productsName, settlementId])
 }
