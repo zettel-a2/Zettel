@@ -1,4 +1,4 @@
-FROM node:18-bullseye as web
+FROM node:18-bullseye as builder
 
 WORKDIR /app
 
@@ -10,5 +10,16 @@ RUN yarn install
 RUN yarn build
 RUN rm -rf .git
 
+FROM node:18-bullseye-slim as runner
+
+WORKDIR /app
+
 ENTRYPOINT ["/usr/bin/tini", "--"]
+
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/packages/client/built ./packages/client/built
+COPY --from=builder /app/packages/backend/node_modules ./packages/backend/node_modules
+COPY --from=builder /app/packages/backend/dist ./packages/backend/dist
+COPY --from=builder /app/packages/backend/prisma ./packages/backend/prisma
+
 CMD yarn migrateandstart
