@@ -18,7 +18,8 @@
 		"build:client": "cd ./packages/client && yarn vite build",
 		"build:backend": "cd ./packages/backend && nest build",
 		"migrate": "cd ./packages/backend && yarn prisma migrate deploy",
-		"migrate:dev": "cd packages/backend && yarn prisma migrate dev"
+		"migrate:dev": "cd packages/backend && yarn prisma migrate dev",
+		"test:backend": "cd ./packages/backend && yarn test"
 	},
 	"dependencies": {
 		"execa": "^6.1.0"

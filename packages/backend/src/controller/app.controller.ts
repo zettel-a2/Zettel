@@ -29,4 +29,9 @@ export class AppController {
   getAccountPage(): string {
     return this.appService.getAccountPage();
   }
+
+  @Get('/test')
+  getHello(): string {
+    return this.appService.getHello();
+  }
 }
