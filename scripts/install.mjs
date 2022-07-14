@@ -7,7 +7,7 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
 
 (async () => {
-    if (process.env.NODE_ENV !== test) {
+    if (process.env.NODE_ENV !== "test") {
         console.log('installing packages/backend ...');
         await execa('yarn', ['install'], {
             cwd: __dirname + '/../packages/backend',
