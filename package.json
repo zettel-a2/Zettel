@@ -19,6 +19,7 @@
 		"build:backend": "cd ./packages/backend && nest build",
 		"migrate": "cd ./packages/backend && yarn prisma migrate deploy",
 		"migrate:dev": "cd packages/backend && yarn prisma migrate dev",
+		"test": "yarn test:backend",
 		"test:backend": "cd ./packages/backend && yarn test"
 	},
 	"dependencies": {

@@ -1,4 +1,4 @@
-name: ESLint
+name: Jest(backend)
 on: push
 jobs:
   ESLint:
@@ -12,5 +12,5 @@ jobs:
           node-version: 18.x
       - name: ci
         run: export NODE_ENV=test && yarn install --immutable --immutable-cache --check-cache
-      - name: ESLint
+      - name: jest(backend)
         run: yarn test
