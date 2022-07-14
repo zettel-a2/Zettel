@@ -4,7 +4,6 @@ WORKDIR /app
 
 COPY . ./
 
-RUN apt update && apt install --no-install-recommends -y tini
 RUN npm install -g @nestjs/cli
 RUN yarn install
 RUN yarn build
@@ -13,6 +12,8 @@ RUN rm -rf .git
 FROM node:18-bullseye-slim as runner
 
 WORKDIR /app
+
+RUN apt update && apt install --no-install-recommends -y tini
 
 ENTRYPOINT ["/usr/bin/tini", "--"]
 
