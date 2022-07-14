@@ -17,7 +17,7 @@ jobs:
           ### タグ名を取得
           CURRENT_VERSION=$(echo $GITHUB_REF#refs/heads/ | sed -e 's/refs\/heads\///' | sed -e 's/#refs\/heads\///')
           ### リポジトリ名を少々カスタマイズ（dockerhubやecrにpushするための）
-          REPO_NAME=$(echo ${{ github.repository }} | sed -e 's/^.\+\/\(.\+\)$/\1/g' | tr '[:upper:]' '[:lower:]'
+          REPO_NAME=$(echo ${{ github.repository }} | sed -e 's/^.\+\/\(.\+\)$/\1/g' | tr '[:upper:]' '[:lower:]')
           ### 次のstepに値を渡す
           echo "CURRENT_VERSION=$CURRENT_VERSION" >> $GITHUB_ENV
           echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
