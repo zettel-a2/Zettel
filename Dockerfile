@@ -18,9 +18,11 @@ RUN apt update && apt install --no-install-recommends -y tini
 ENTRYPOINT ["/usr/bin/tini", "--"]
 
 COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/packages/client/built ./packages/client/built
 COPY --from=builder /app/packages/backend/node_modules ./packages/backend/node_modules
 COPY --from=builder /app/packages/backend/dist ./packages/backend/dist
 COPY --from=builder /app/packages/backend/prisma ./packages/backend/prisma
+COPY --from=builder /app/packages/backend/package.json ./packages/backend/package.json
 
 CMD yarn migrateandstart
