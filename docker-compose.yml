@@ -3,7 +3,7 @@ version: "3"
 services:
   web:
     # build: .
-    image: na2na/zettel:develop
+    image: na2na/zettel:main
     restart: always
     links:
       - db
