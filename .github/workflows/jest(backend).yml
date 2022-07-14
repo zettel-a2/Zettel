@@ -1,7 +1,7 @@
-name: Jest(backend)
+name: Jest
 on: push
 jobs:
-  Jest(backend):
+  Jest:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -12,5 +12,5 @@ jobs:
           node-version: 18.x
       - name: ci
         run: export NODE_ENV=test && yarn install --immutable --immutable-cache --check-cache
-      - name: jest(backend)
+      - name: jest
         run: yarn test
