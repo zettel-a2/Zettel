@@ -10,7 +10,7 @@ RUN yarn install
 RUN yarn build
 RUN rm -rf .git
 
-FROM base as runner
+FROM node:18-bullseye-slim as runner
 
 WORKDIR /app
 
