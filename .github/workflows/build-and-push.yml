@@ -33,7 +33,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: na2na/zettel:::set-output name=branch::${GITHUB_REF#refs/heads/}
+          tags: na2na/zettel:${GITHUB_REF_CONTEXT#refs/heads/}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
       -
