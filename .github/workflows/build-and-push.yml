@@ -15,7 +15,7 @@ jobs:
       - name: setup
         run: |
           ### タグ名を取得
-          CURRENT_VERSION=$(echo $GITHUB_REF | sed 's/refs\/tags\///')
+          CURRENT_VERSION=$(echo $GITHUB_REF#refs/heads/')
           ### リポジトリ名を少々カスタマイズ（dockerhubやecrにpushするための）
           REPO_NAME=$(echo ${{ github.repository }} | sed -e 's/^.\+\/\(.\+\)$/\1/g')
           ### 次のstepに値を渡す
@@ -35,7 +35,7 @@ jobs:
       - name: build image
         run: |
           ### dockerhubのPUSH先のタグ名を作成
-          DOCKER_HUB_BASE_NAME=${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.REPO_NAME }}
+          DOCKER_HUB_BASE_NAME=${{ secrets.DOCKER_USERNAME }}/${{ env.REPO_NAME }}
           TAG_HUB=${DOCKER_HUB_BASE_NAME}:${{ env.CURRENT_VERSION }}
           ### 次のstepにタグ名を渡す
           echo "TAG_HUB=$TAG_HUB" >> $GITHUB_ENV
