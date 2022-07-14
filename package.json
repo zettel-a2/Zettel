@@ -9,7 +9,11 @@
 		"cleanall": "npm run clean-all",
 		"install": "node ./scripts/install.mjs",
 		"start:dev": "cd ./packages/backend &&  nest start --watch",
-		"client:preview": "cd ./packages/client && yarn vite build && yarn vite preview"
+		"start": "cd ./packages/backend &&  nest start",
+		"client:preview": "cd ./packages/client && yarn vite build && yarn vite preview",
+		"build": "yarn build && yarn build:client",
+		"build:client": "cd ./packages/client && yarn vite build",
+		"build:backend": "cd ./packages/backend && nest build"
 	},
 	"dependencies": {
 		"execa": "^6.1.0"

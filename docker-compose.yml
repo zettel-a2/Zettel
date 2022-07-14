@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  web:
+    # build: .
+    image: na2na/zettel:develop
+    restart: always
+    links:
+      - db
+    ports:
+      - "3000:3000"
+    networks:
+      - internal_network
+      - external_network
+
+  db:
+    restart: always
+    image: postgres:12.2-alpine
+    networks:
+      - internal_network
+    env_file:
+      - .config/docker.env
+    volumes:
+      - ./db:/var/lib/postgresql/data
+
+networks:
+  internal_network:
+    internal: true
+  external_network:
