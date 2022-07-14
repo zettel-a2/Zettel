@@ -5,9 +5,10 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// DO NOT EDIT OR DELETE THIS BLOCK!!!
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://postgres:postgres@db:5432/mydb?schema=public"
 }
 
 model User {
