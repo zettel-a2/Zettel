@@ -1,5 +1,8 @@
 name: ESLint
 on: push
+  # main以外のブランチ
+  branches:
+    - !main
 jobs:
   ESLint:
     runs-on: ubuntu-latest
