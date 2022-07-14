@@ -1,33 +1,13 @@
 /* eslint-disable no-irregular-whitespace */
 import '@css/header_style.css'
 import '@css/body_style.css'
-import inputImg from '@img/input.png'
-import listImg from '@img/list.png'
-import outputImg from '@img/output.png'
+import receiptImg from '@img/receipt.png'
+import toggleImg from '@img/toggle.png'
+import searchImg from '@img/search.png'
+import { headerHTML } from '@components/header'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-<header class="site-header">
-<div class="wrapper site-header__wrapper">
-  <div class="site-header__start">
-    <a href="index.html" class="brand">Zettel?</a>
-  </div>
-  <div class="site-header__middle">
-    <nav class="nav">
-      <button class="nav__toggle" aria-expanded="false" type="button">
-        menu
-      </button>
-      <ul class="nav__wrapper">
-      <li class="nav__item"><a href="input.html"><img class="icon" src="${inputImg}">　入力</a></li>
-      <li class="nav__item"><a href="list.html"><img class="icon" src="${listImg}">　一覧</a></li>
-      <li class="nav__item"><a href="output.html"><img class="icon" src="${outputImg}">　出力</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="site-header__end">
-    <a href="account.html">Sign in→</a>
-  </div>
-</div>
-</header>
+${headerHTML}
 <main id="main_title">
 <h1>Zettel?</h1>
 <!-- 検索 -->
@@ -35,10 +15,10 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <h3>レシート検索</h3>
 <form action="">
   <input type="text" size="40">
-  <input type="image" src="../img/search.png" class="toggle_icon" alt="　[検索]　">
+  <input type="image" src="${searchImg}" class="toggle_icon" alt="　[検索]　">
 
 
-<label for="toggle" onclick=""  for="menuToggle"><img class="toggle_icon" src="../img/toggle.png" alt="絞り込み"></label>
+<label for="toggle" onclick=""  for="menuToggle"><img class="toggle_icon" src="${toggleImg}" alt="絞り込み"></label>
 <input type="checkbox" id="toggle">
 <!-- autocomplete="off" -->
 
@@ -97,10 +77,10 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 <h2>レシート一覧</h2>
 <div class="list">
-<div class="image_frame"><img src="../img/receipt.png" class="receipt"></div>
-<div class="image_frame"><img src="../img/receipt.png" class="receipt"></div>
-<div class="image_frame"><img src="../img/receipt.png" class="receipt"></div>
-<div class="image_frame"><img src="../img/receipt.png" class="receipt"></div>
+<div class="image_frame"><img src="${receiptImg}" class="receipt"></div>
+<div class="image_frame"><img src="${receiptImg}" class="receipt"></div>
+<div class="image_frame"><img src="${receiptImg}" class="receipt"></div>
+<div class="image_frame"><img src="${receiptImg}" class="receipt"></div>
 </div>
 </main>
 `

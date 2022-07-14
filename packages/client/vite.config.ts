@@ -10,7 +10,8 @@ export default defineConfig({
         { find: '@', replacement: path.resolve(__dirname, './src') },
         { find: '@img', replacement: path.resolve(__dirname, './src/img') },
         { find: '@css', replacement: path.resolve(__dirname, './src/css') },
-        { find: '@js', replacement: path.resolve(__dirname, './src/js') }
+        { find: '@js', replacement: path.resolve(__dirname, './src/js') },
+        { find: '@components', replacement: path.resolve(__dirname, './src/js/components') }
       ]
     })
   ],

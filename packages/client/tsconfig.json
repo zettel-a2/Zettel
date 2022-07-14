@@ -20,6 +20,7 @@
       "@css/*": ["src/css/*"],
       "@img/*": ["src/img/*"],
       "@ts/*": ["src/js/*"],
+      "@components/*": ["src/js/components/*"],
     }
   },
   "include": ["src/**/*.ts"],
