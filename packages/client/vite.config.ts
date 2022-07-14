@@ -17,6 +17,7 @@ export default defineConfig({
   build: {
     outDir: '../built', // 出力場所の指定
     rollupOptions: {
+      input: ['src/index.html', 'src/account.html', 'src/input.html', 'src/list.html', 'src/output.html'], // 入力ファイルの指定
       // ファイル出力設定
       output: {
         assetFileNames: (assetInfo) => {
@@ -33,13 +34,6 @@ export default defineConfig({
         chunkFileNames: 'assets/js/[name].js',
         entryFileNames: 'assets/js/[name].js'
       }
-    }
-  },
-  resolve: {
-    alias: {
-      '@css/*': path.resolve(__dirname, 'src/css/*'),
-      '@img/*': path.resolve(__dirname, 'src/img/*'),
-      '@ts/*': path.resolve(__dirname, 'src/js/*')
     }
   }
 })

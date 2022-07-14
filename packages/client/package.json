@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "yarn tsc && vite build",
+    "build": "yarn tsc && vite build --emptyOutDir",
     "preview": "vite preview",
     "dev:network": "vite dev --host"
   },

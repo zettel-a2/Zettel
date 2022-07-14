@@ -4,6 +4,7 @@ import '@css/body_style.css'
 import inputImg from '@img/input.png'
 import listImg from '@img/list.png'
 import outputImg from '@img/output.png'
+import receiptImg from '@img/receipt.png'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <header class="site-header">
@@ -38,10 +39,10 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
   <h2>最近のレシート</h2>
   <div class="list">
-    <div class="image_frame"><img src="../img/receipt.png" class="receipt"></div>
-    <div class="image_frame"><img src="../img/receipt.png" class="receipt"></div>
-    <div class="image_frame"><img src="../img/receipt.png" class="receipt"></div>
-    <div class="image_frame"><img src="../img/receipt.png" class="receipt"></div>
+    <div class="image_frame"><img src="${receiptImg}" class="receipt"></div>
+    <div class="image_frame"><img src="${receiptImg}" class="receipt"></div>
+    <div class="image_frame"><img src="${receiptImg}" class="receipt"></div>
+    <div class="image_frame"><img src="${receiptImg}" class="receipt"></div>
   </div>
 
   <noscript>
