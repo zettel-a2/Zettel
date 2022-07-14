@@ -9,7 +9,6 @@
 		"clean-all": "node ./scripts/clean-all.js",
 		"cleanall": "npm run clean-all",
 		"install": "node ./scripts/install.mjs",
-		"install:test": "node ./scripts/install-test.mjs",
 		"start:dev": "cd ./packages/backend &&  nest start --watch",
 		"start": "cd ./packages/backend &&  nest start:dev",
 		"migrateandstart": "yarn migrate && yarn start",
