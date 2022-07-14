@@ -8,7 +8,8 @@
 		"clean-all": "node ./scripts/clean-all.js",
 		"cleanall": "npm run clean-all",
 		"install": "node ./scripts/install.mjs",
-		"start:dev": "cd ./packages/backend &&  nest start --watch"
+		"start:dev": "cd ./packages/backend &&  nest start --watch",
+		"client:preview": "cd ./packages/client && yarn vite build && yarn vite preview"
 	},
 	"dependencies": {
 		"execa": "^6.1.0"
