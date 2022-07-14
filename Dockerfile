@@ -24,5 +24,6 @@ COPY --from=builder /app/packages/backend/node_modules ./packages/backend/node_m
 COPY --from=builder /app/packages/backend/dist ./packages/backend/dist
 COPY --from=builder /app/packages/backend/prisma ./packages/backend/prisma
 COPY --from=builder /app/packages/backend/package.json ./packages/backend/package.json
+COPY --from=builder /app/packages/backend/tsconfig.build.json ./packages/backend/tsconfig.build.json
 
 CMD yarn migrateandstart
