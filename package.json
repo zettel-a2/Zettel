@@ -11,7 +11,7 @@
 		"start:dev": "cd ./packages/backend &&  nest start --watch",
 		"start": "cd ./packages/backend &&  nest start",
 		"client:preview": "cd ./packages/client && yarn vite build && yarn vite preview",
-		"build": "yarn build && yarn build:client",
+		"build": "yarn build:backend && yarn build:client",
 		"build:client": "cd ./packages/client && yarn vite build",
 		"build:backend": "cd ./packages/backend && nest build"
 	},
