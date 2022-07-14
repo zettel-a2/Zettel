@@ -4,16 +4,21 @@
 	"private": true,
 	"scripts": {
 		"lint": "node ./scripts/lint.mjs",
+		"lint:fix": "node ./scripts/lint-fix.mjs",
 		"clean": "node ./scripts/clean.js",
 		"clean-all": "node ./scripts/clean-all.js",
 		"cleanall": "npm run clean-all",
 		"install": "node ./scripts/install.mjs",
 		"start:dev": "cd ./packages/backend &&  nest start --watch",
-		"start": "cd ./packages/backend &&  nest start",
+		"start": "cd ./packages/backend &&  nest start:dev",
+		"migrateandstart": "yarn migrate && yarn start",
+		"migrateandstart:dev": "yarn migrate:dev && yarn start:dev",
 		"client:preview": "cd ./packages/client && yarn vite build && yarn vite preview",
 		"build": "yarn build:backend && yarn build:client",
 		"build:client": "cd ./packages/client && yarn vite build",
-		"build:backend": "cd ./packages/backend && nest build"
+		"build:backend": "cd ./packages/backend && nest build",
+		"migrate": "cd ./packages/backend && yarn prisma migrate deploy",
+		"migrate:dev": "cd packages/backend && yarn prisma migrate dev"
 	},
 	"dependencies": {
 		"execa": "^6.1.0"
