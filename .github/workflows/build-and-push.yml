@@ -1,6 +1,9 @@
 name: Publish Docker Image
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -30,7 +33,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: na2na/zettel:develop
+          tags: na2na/zettel:${GITHUB_REF#refs/heads/}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
       -

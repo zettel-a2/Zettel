@@ -11,4 +11,4 @@ RUN yarn build
 RUN rm -rf .git
 
 ENTRYPOINT ["/usr/bin/tini", "--"]
-CMD yarn start
+CMD yarn migrateandstart
