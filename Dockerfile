@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . ./
 
 RUN apt update && apt install --no-install-recommends -y tini
-RUN su node -c "npm install -g @nestjs/cli"
+RUN npm install -g @nestjs/cli
 RUN yarn install
 RUN yarn build
 RUN rm -rf .git
