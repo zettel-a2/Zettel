@@ -35,7 +35,7 @@ jobs:
       - name: build image
         run: |
           ### dockerhubのPUSH先のタグ名を作成
-          DOCKER_HUB_BASE_NAME=${{ secrets.DOCKER_USERNAME }}/${{ env.REPO_NAME }}
+          DOCKER_HUB_BASE_NAME=na2na/${{ env.REPO_NAME }}
           TAG_HUB=${DOCKER_HUB_BASE_NAME}:${{ env.CURRENT_VERSION }}
           ### 次のstepにタグ名を渡す
           echo "TAG_HUB=$TAG_HUB" >> $GITHUB_ENV
