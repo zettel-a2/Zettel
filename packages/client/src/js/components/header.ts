@@ -8,7 +8,7 @@ const headerHTML = `
 <header class="site-header">
     <div class="wrapper site-header__wrapper">
       <div class="site-header__start">
-        <a href="index.html" class="brand">Zettel?</a>
+        <a href="/index" class="brand">Zettel?</a>
       </div>
       <div class="site-header__middle">
         <nav class="nav">
@@ -16,14 +16,14 @@ const headerHTML = `
             menu
           </button>
           <ul class="nav__wrapper">
-          <li class="nav__item"><a href="input.html"><img class="icon" src="${inputImg}">　入力</a></li>
-          <li class="nav__item"><a href="list.html"><img class="icon" src="${listImg}">　一覧</a></li>
-          <li class="nav__item"><a href="output.html"><img class="icon" src="${outputImg}">　出力</a></li>
+          <li class="nav__item"><a href="/input"><img class="icon" src="${inputImg}">　入力</a></li>
+          <li class="nav__item"><a href="/list"><img class="icon" src="${listImg}">　一覧</a></li>
+          <li class="nav__item"><a href="/output"><img class="icon" src="${outputImg}">　出力</a></li>
           </ul>
         </nav>
       </div>
       <div class="site-header__end">
-        <a href="account.html">Sign in→</a>
+        <a href="/account">Sign in→</a>
       </div>
     </div>
   </header>

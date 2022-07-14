@@ -7,9 +7,11 @@
     "dev": "vite",
     "build": "yarn tsc && vite build --emptyOutDir",
     "preview": "vite preview",
-    "dev:network": "vite dev --host"
+    "dev:network": "vite dev --host",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
   },
   "devDependencies": {
+    "@nuxt/typescript": "^2.8.1",
     "@rollup/plugin-alias": "^3.1.9",
     "@types/node": "^18.0.4",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
@@ -23,6 +25,10 @@
     "vite": "^3.0.0"
   },
   "dependencies": {
-    "tsc-alias": "^1.6.11"
+    "nuxt": "^2.15.8",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "^1.6.11",
+    "vue-class-component": "^7.2.6",
+    "vue-property-decorator": "^9.1.2"
   }
 }
