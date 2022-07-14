@@ -11,6 +11,6 @@ jobs:
         with:
           node-version: 18.x
       - name: ci
-        run: yarn global add execa && yarn install:test
+        run: export NODE_ENV=test && yarn install --immutable --immutable-cache --check-cache
       - name: ESLint
         run: yarn lint
