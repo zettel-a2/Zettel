@@ -1,8 +1,8 @@
 name: Jest
 on:
   push:
-    branches:
-      - !'main'
+    branches-ignore:
+      - main
 jobs:
   Jest:
     runs-on: ubuntu-latest
