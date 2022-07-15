@@ -8,15 +8,26 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
+  "eslintIgnore": [
+    ".eslintrc.cjs",
+    "node_modules",
+    "built"
+  ],
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "single-spa": "^5.9.4"
   },
   "devDependencies": {
     "@types/node": "^18.0.4",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
     "@vitejs/plugin-react": "^2.0.0",
+    "eslint": ">=5.16.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.30.1",
     "typescript": "^4.6.4",
     "vite": "^3.0.0",
     "vite-tsconfig-paths": "^3.5.0"
