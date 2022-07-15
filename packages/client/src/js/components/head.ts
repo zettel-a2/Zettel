@@ -1,5 +1,5 @@
 // import logoImg from '@img/logo.png'
-document.createElement('heade').innerHTML = `
+document.createElement('head').innerHTML = `
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="preconnect" href="https://fonts.googleapis.com">
