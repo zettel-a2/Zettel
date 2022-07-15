@@ -8,7 +8,7 @@ const headerHTML = `
 <header class="site-header">
     <div class="wrapper site-header__wrapper">
       <div class="site-header__start">
-        <a href="/index" class="brand">Zettel?</a>
+        <a href="/" class="brand">Zettel?</a>
       </div>
       <div class="site-header__middle">
         <nav class="nav">
