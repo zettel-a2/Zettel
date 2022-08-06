@@ -5,7 +5,7 @@ on:
       - "main"
 
 jobs:
-  ESLint:
+  ESLint-Client:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
