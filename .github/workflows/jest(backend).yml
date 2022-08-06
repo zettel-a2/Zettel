@@ -1,8 +1,5 @@
 name: Jest
-on:
-  push:
-    branches-ignore:
-      - main
+on: workflow_dispatch
 jobs:
   Jest:
     runs-on: ubuntu-latest

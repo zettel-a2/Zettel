@@ -1,8 +1,7 @@
 name: ESLint
 on:
-  push:
-    branches-ignore:
-      - main
+  workflow_dispatch:
+
 jobs:
   ESLint:
     runs-on: ubuntu-latest
@@ -14,6 +13,6 @@ jobs:
         with:
           node-version: 18.x
       - name: ci
-        run: export NODE_ENV=test && yarn install --immutable --immutable-cache --check-cache
+        run: cd packages/client && yarn install --immutable --immutable-cache --check-cache
       - name: ESLint
-        run: yarn lint
+        run: cd packages/client && yarn lint
