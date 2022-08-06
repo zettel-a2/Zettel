@@ -1,6 +1,8 @@
 name: ESLint
 on:
-  workflow_dispatch:
+  push:
+    branches-ignore:
+      - "main"
 
 jobs:
   ESLint:
