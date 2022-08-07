@@ -26,4 +26,9 @@ module.exports = {
     'max-len': 'off',
     'no-tabs': 'off',
   },
+  'settings': {
+    'react': {
+      version: 'detect',
+    },
+  },
 };
