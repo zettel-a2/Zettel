@@ -13,34 +13,33 @@ import style from './style';
 
 export default () => {
   const [isOpen, toggleIsOpen] = useState(true);
+  const receiptViewNum = 4;
+
   return (
-    <main id="main_title">
+    <main css={style.mainTitle}>
       <Logo />
 
       {/* <!-- 検索 --> */}
-      <div className="search">
+      <div css={style.search}>
         <h3>レシート検索</h3>
-        <form action="">
-          <TextField name='keyword' id='keyword' />
-          <input type="image" src={searchImg} css={style.toggleIcon} alt="　[検索]　" />
+        <TextField name='keyword' id='keyword' />
+        <input type="image" src={searchImg} css={style.toggleIcon} alt="　[検索]　" />
 
 
-          <img css={style.toggleIcon} src={toggleImg} alt="絞り込み" onClick={() => {
-            toggleIsOpen(!isOpen);
-          }} />
-          {/* <!-- autocomplete="off" --> */}
+        <img css={style.toggleIcon} src={toggleImg} alt="絞り込み" onClick={() => {
+          toggleIsOpen(!isOpen);
+        }} />
+        {/* <!-- autocomplete="off" --> */}
 
-          {/* isOpenがtrueならSearchDetailを表示 */}
-          <SearchDetail isShow={isOpen} />
-        </form>
+        {/* isOpenがtrueならSearchDetailを表示 */}
+        {isOpen && <SearchDetail />}
       </div>
 
       <h2>レシート一覧{isOpen}</h2>
-      <div className="list">
-        <ReceiptFrame imgPath={receiptImg} />
-        <ReceiptFrame imgPath={receiptImg} />
-        <ReceiptFrame imgPath={receiptImg} />
-        <ReceiptFrame imgPath={receiptImg} />
+      <div css={style.list}>
+        {Array.from({length: receiptViewNum}).map((_, i) => (
+          <ReceiptFrame imgPath={receiptImg} key={i} />
+        ))}
       </div>
     </main>
   );
