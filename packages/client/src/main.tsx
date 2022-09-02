@@ -10,6 +10,7 @@ import Index from '@/pages/Index';
 import Input from '@/pages/Input';
 import List from '@/pages/List';
 import Output from '@/pages/Output';
+import Account from '@/pages/Account';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           <Route path={'input'} element={<Input />} />
           <Route path={'list'} element={<List />} />
           <Route path={'output'} element={<Output />} />
+          <Route path={'account'} element={<Account />} />
           {/* 上から順番にマッチしていく */}
           <Route path="*" element={<div>not found</div>} />
         </Routes>
