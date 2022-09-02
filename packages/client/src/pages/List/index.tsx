@@ -12,7 +12,7 @@ import toggleImg from '@assets/images/toggle.png';
 import style from './style';
 
 export default () => {
-  const [isOpen, toggleIsOpen] = useState(true);
+  const [isOpen, toggleIsOpen] = useState(false);
   const receiptViewNum = 4;
 
   return (
